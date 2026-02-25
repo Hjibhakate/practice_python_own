@@ -349,7 +349,7 @@ with open(file_name,"r") as f:
     words = content.split()
     word_count = len(words)
 
-print("Total number of words in the file : ",word_count)
+print("Total number of words in the file
 
 
 
