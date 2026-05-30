@@ -1,64 +1,55 @@
-import math 
-
-def rectangle():
-
-    length = float(input("Enter length : "))
-
-    breadth = float(input("Enter breadth :"))
-
-    return length * breadth
-
-def circle():
-
-    radius = float(input("Enter the radius : "))
-
-    area = math.pi*radius*radius
-
-    circumference = 2*math.pi*radius
-
-    print("Area of Circumference of circle = ",round(circumference,2))
-
-    return area 
-
-def triangel():
-
-    base = float(input("enter the bases : "))
-
-    height = float(input("Enter the hight : "))
-
-    return 0.5*base*height
+students = []
+attendances = {}
 
 while True :
 
-    print("=======Area Calculater ======")
+    print("\n === MINI ATTENDEANCE SYSTEM ====")
 
-    print("1.Rectangel")
-    print("2.Circle")
-    print("3.Triangel")
-    print("4.Exist ")
+    print("1.Add Student ")
+    print("2. Marks Attendance")
+    print("3.Show Attendance ")
+    print("4. Exist ")
 
-
-    choice = input("Enter  your choice : ")
+    choice = input("Enter your choice: ")
 
     if choice == "1":
-        area = rectangle()
 
-        print("Area of Rectangel= ",area )
+        name = input("Enter student name : ")
 
-    elif choice =="2":
-        area = circle()
+        students.append(name)
 
-        print("Area of Circle= ",round(area,2))
+        print(name,"added successfully . ")
+
+    elif choice == "2":
+        if len(students)  == 0:
+            print("No student found . ")
+            continue
+        print("\n Mark Attendance ")
+
+        for student in students :
+            status = input(f"{student} P/A : ").upper()
+
+            if status == "P" :
+                attendances[student] = "Absent"
+            else:
+                print("Invalid input.Marked as Absent. ")
+                attendances[student] = "Absent"
 
     elif choice == "3":
-        area = triangel()
+        print("\n===Attendance List ===== ")
 
-        print("Area of triangel is = ",area )
+        if len(attendances)== 0 :
+            print("No attendance recorded yet . ")
+        else:
+            for student,status in attendances.items():
+                print(student,"-",status)
 
     elif choice == "4":
-        print("program Ended ")
+        print("program Ended . ")
+
         break 
     else:
-        print("Invalid Choice ")
+        print("Invalid Choice. ")
 
-    #kjnkj
+
+        
