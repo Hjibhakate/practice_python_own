@@ -30,7 +30,10 @@ while True :
             status = input(f"{student} P/A : ").upper()
 
             if status == "P" :
+                attendances[student] = "Present"
+            elif status ==  "A":
                 attendances[student] = "Absent"
+                
             else:
                 print("Invalid input.Marked as Absent. ")
                 attendances[student] = "Absent"
