@@ -6,17 +6,18 @@ has_uppercase = False
 
 has_special = False 
 
-special_chars = "!@#$%^&*()"
+special_chars = "!@#$%^&*&()"
 
-for char in password  :
+for char in  password:
+
     if char.isdigit():
         has_number = True 
-    elif char.isupper():
+    if char.isupper():
         has_uppercase = True 
-    elif char in special_chars:
-        has_special = True 
+    if char in special_chars:
+        has_special = True
 
-if len(password)<8:
+if len(password) < 8:
     print("Weak Password")
 elif has_number and has_uppercase and has_special:
     print("Strong Password ")
