@@ -1,51 +1,94 @@
-expense = []
+students = {}
 
-def add_expense():
-    amount = float( input("Enter expense amount :  "))
-    expense.append(amount)
-    print("Expense added successfully . ")
+def calcualte_grade(marks):
 
-
-def show_expenses():
-    if len(expense) == 0 :
-        print("No expenses found ")
+    if marks >= 90:
+        return "A"
+    elif marks >= 75:
+        return "B"
+    elif marks >= 50:
+        return "C"
     else:
-        print("\n Expense : ")
-        for i , amount in enumerate(expense, start = 1):
-            print(f"{i}. rs{amount}")
+        return "Fail"
 
-def total_spending():
-    print("Total Spending = rs ", sum(expense))
+def add_student():
+
+    name = input("Enter the Student name : ")
+
+    marks = float(input("Enter marks : "))
+
+    students[name] = marks 
+
+    print("Student added successfully . ")
 
 
-def highest_expense():
-    if len(expense) ==  0 :
-        print ("No expenses found. ")
+def delete_student():
+
+    name = input("Enter student name to delete : ")
+
+    if name in students:
+
+        del students[name]
+
+        print("Student deleted successfully. ")
     else:
-        print("Highest Expense = Rs ", max(expense))
+        print("Student not found . ")
+
+def search_student():
+
+    name = input("Enter student name to search : ")
+
+    if name in students :
+
+        marks = students[name]
+
+        grade = calcualte_grade(marks)
+
+        print("\n Student Founs ")
+
+        print("Name : ",name)
+        print("Marks: ",marks)
+        print("Grade: ",grade)
+    else:
+        print("Student not found . ")
+
+def show_students():
+
+    if len(students) == 0 :
+        print("No student available ")
+
+    else:
+        print("\n === STUDENT LIST ===== ")
+
+        for name ,marks  in students.items():
+
+            grade = calcualte_grade(marks)
+
+            print(f"Name : {name } | Marks : {marks} | Grade : {grade}")
 
 while True :
-     print("===== EXPENSE TRACKER ====== ")
-     print("1. Add Expenses ")
-     print("2. Show Expenses ")
-     print("3. Total Spending ")
-     print("4. Highest Expense ")
-     print ("Exit ")
+
+    print("\n === STUDENT MANAGEMENT SYSTEM ========== ")
+
+    print("1. Add Student ")
+    print('2. Delete Student ')
+    print("3. Search Student ")
+    print(" 4. Show All Students ")
+    print("5. Exit ")
 
 
-     choice = input('Enter your choice : ')
+    choice = input("Enter you choice : ")
 
-
-     if choice == "1":
-         add_expense()
-     elif choice == "2":
-         show_expenses()
-     elif choice == "3":
-         total_spending()
-     elif choice == "4":
-         highest_expense()
-     elif choice == "5":
-         print("Program Ended . ")
-         break 
-     else :
-          print("Invalid  Choice ")
+    if choice == "1":
+        add_student()
+    elif choice == "2":
+        delete_student()
+    elif choice == "3":
+        search_student()
+    elif choice == "4":
+        show_students()
+    elif choice == "5":
+        print("program ended . ")
+        break 
+    else :
+        print("Invalid Choice! ")
