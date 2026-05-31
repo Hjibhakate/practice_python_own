@@ -1,25 +1,51 @@
-password = input("Enter your password : ")
+expense = []
 
-has_number = False 
+def add_expense():
+    amount = float( input("Enter expense amount :  "))
+    expense.append(amount)
+    print("Expense added successfully . ")
 
-has_uppercase = False 
 
-has_special = False 
+def show_expenses():
+    if len(expense) == 0 :
+        print("No expenses found ")
+    else:
+        print("\n Expense : ")
+        for i , amount in enumerate(expense, start = 1):
+            print(f"{i}. rs{amount}")
 
-special_chars = "!@#$%^&*&()"
+def total_spending():
+    print("Total Spending = rs ", sum(expense))
 
-for char in  password:
 
-    if char.isdigit():
-        has_number = True 
-    if char.isupper():
-        has_uppercase = True 
-    if char in special_chars:
-        has_special = True
+def highest_expense():
+    if len(expense) ==  0 :
+        print ("No expenses found. ")
+    else:
+        print("Highest Expense = Rs ", max(expense))
 
-if len(password) < 8:
-    print("Weak Password")
-elif has_number and has_uppercase and has_special:
-    print("Strong Password ")
-else:
-    print("Medium Password ")
+while True :
+     print("===== EXPENSE TRACKER ====== ")
+     print("1. Add Expenses ")
+     print("2. Show Expenses ")
+     print("3. Total Spending ")
+     print("4. Highest Expense ")
+     print ("Exit ")
+
+
+     choice = input('Enter your choice : ')
+
+
+     if choice == "1":
+         add_expense()
+     elif choice == "2":
+         show_expenses()
+     elif choice == "3":
+         total_spending()
+     elif choice == "4":
+         highest_expense()
+     elif choice == "5":
+         print("Program Ended . ")
+         break 
+     else :
+          print("Invalid  Choice ")
