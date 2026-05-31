@@ -1,8 +1,24 @@
-def print_table(number):
+password = input("Enter your password : ")
 
-    for i in range (1,11):
-        print( number," * ", i ,"=" , number * i ) 
+has_number = False 
 
-num = int(input("Enter the number you want to print : "))
+has_uppercase = False 
 
-print_table(num)
+has_special = False 
+
+special_chars = "!@#$%^&*()"
+
+for char in password  :
+    if char.isdigit():
+        has_number = True 
+    elif char.isupper():
+        has_uppercase = True 
+    elif char in special_chars:
+        has_special = True 
+
+if len(password)<8:
+    print("Weak Password")
+elif has_number and has_uppercase and has_special:
+    print("Strong Password ")
+else:
+    print("Medium Password ")
