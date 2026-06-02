@@ -1,9 +1,16 @@
-fruits = ["apple","banana","mango"]
-print(fruits)
-fruits.append("Orange")
+fruits = ["banana","apple","mango","orange","grapes"]
 
 print(fruits)
+#Remove an item 
 
-for fruit in fruits:
-    print(fruit)
+fruits.remove("orange")
 
+print(fruits)
+
+fruits.sort()
+
+mango_index = fruits.index("mango")
+
+print("Updated list : ",fruits)
+
+print("Index of mango: ",mango_index)
