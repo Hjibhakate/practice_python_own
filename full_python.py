@@ -1,10 +1,5 @@
-fruits = [ "banana","apple","graph","orange","mango"]
+#Exercise :Store student marks 
 
-fruits.remove("graph")
+student = {"name": " harshu","math":95,"science":90}
 
-fruits.sort()
-
-mango_index = fruits.index("mango")
-
-print("Updated lists: ", fruits )
-print("Index of mango ",mango_index)
+print(student["name"],"got the " ,student["math"],"math and ",student["science"])
