@@ -1,5 +1,5 @@
-#Exercise :Store student marks 
+#Exercise : Store student marks 
 
-student = {"name": " harshu","math":95,"science":90}
+student  = {"NAME": "HARSHAD JIBHAKATE ", "ROLL NO ": 125}
 
-print(student["name"],"got the " ,student["math"],"math and ",student["science"])
+print(student["NAME"],"his roll no is ", student["ROLL NO "] ,"HOW ARE YOU ")
