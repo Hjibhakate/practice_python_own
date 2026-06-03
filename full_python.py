@@ -1,14 +1,8 @@
-marks = {
-"Math": 85,
-"Science":90,
-"English":78
-    }
+#Exercise : Write and read a file 
 
-#Add a new subject 
+with open("example.txt","w") as f:
+    f.write("Hello Python \nLearning is fun!")
 
-marks["History"] = 92
-
-#Loop through all  subject and print marks 
-
-for subject,mark in marks.items():
-    print(subject,":",mark)
+with open("example.txt","r") as f:
+    content = f.read()
+    print(content)
