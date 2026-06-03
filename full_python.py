@@ -1,8 +1,12 @@
-with open("example.txt","w") as f:
-    f.write("Hello , world !")
+#Append new lines to the file 
+with open("notes.txt","a") as f:
+    f.write("\n Python is easy to learn . ")
+    f.write("\n File handling is important . ")
 
-with open("example.txt","r") as f:
+#Read the file and count words 
+with open("notes.txt","r")as f:
     content = f.read()
-    print(content)
 
-    
+word_count = len(content.split())
+
+print("Total words in file: ", word_count)
