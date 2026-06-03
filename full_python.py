@@ -1,5 +1,14 @@
-#Exercise : Store student marks 
+marks = {
+"Math": 85,
+"Science":90,
+"English":78
+    }
 
-student  = {"NAME": "HARSHAD JIBHAKATE ", "ROLL NO ": 125}
+#Add a new subject 
 
-print(student["NAME"],"his roll no is ", student["ROLL NO "] ,"HOW ARE YOU ")
+marks["History"] = 92
+
+#Loop through all  subject and print marks 
+
+for subject,mark in marks.items():
+    print(subject,":",mark)
