@@ -1,17 +1,21 @@
-class Student:
-    def __init__(self,name, marks):
-        self.name = name
-        self.marks = marks 
+class BankAccount:
+    def __init__(self,owner,balance):
+        self.owner = owner
+        self.balance = balance
 
-    def display(self):
-        print(f"my name is {self.name} and {self.marks}")
+    def deposite(self,amount):
+        self.balance += amount
 
-    def new(self,extra):
-        self.marks += extra
-        print(f"my  extra marks is {self.marks}")
+    def withdraw(self,amount):
+        self.balance -= amount
 
-p1 = Student("harshad",99)
+    def show_balance(self):
+        print(f"{self.balance}")
 
-p1.display()
-p1.new(10)
-p1.display()
+p1 = BankAccount("harshad",500000)
+
+p1.deposite(500)
+p1.withdraw(100)
+
+p1.show_balance()
+        
