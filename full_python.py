@@ -1,19 +1,17 @@
-class Person :
-    def __init__(self,name ,age):
-        self.name = name 
-        self.age = age 
-    def greet(self):
-        print(f"my name is {self.name} and my age is {self.age}")
+class Student:
+    def __init__(self,name, marks):
+        self.name = name
+        self.marks = marks 
 
-    def new_age(self):
-        self.age += 1
-        print(f"my new age is {self.age}")
+    def display(self):
+        print(f"my name is {self.name} and {self.marks}")
 
-    def new_name(self,change_name):
-        self.change_name = change_name
-        print(f"my new change name is {self.change_name}")
+    def new(self,extra):
+        self.marks += extra
+        print(f"my  extra marks is {self.marks}")
 
-p1 = Person("harshad",22)
-p1.greet()
-p1.new_age()
-p1.new_name("hemu")
+p1 = Student("harshad",99)
+
+p1.display()
+p1.new(10)
+p1.display()
